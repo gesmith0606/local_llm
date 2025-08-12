@@ -1,0 +1,62 @@
+# AI Image Generation Configuration
+
+# Ollama Settings
+ollama:
+  base_url: "http://localhost:11434"
+  default_model: "llama2"
+  timeout: 30
+  max_retries: 3
+
+# Model Settings
+models:
+  default_diffusion_model: "runwayml/stable-diffusion-v1-5"
+  device: "auto"  # auto, cuda, cpu
+  cache_dir: "./models"
+  
+# Generation Settings
+generation:
+  default_width: 512
+  default_height: 512
+  default_steps: 20
+  default_guidance_scale: 7.5
+  default_batch_size: 1
+  max_images_per_batch: 4
+
+# Enhancement Settings
+enhancement:
+  enabled: true
+  default_style: "detailed"
+  max_prompt_length: 500
+  add_quality_tags: true
+  preserve_original: true
+
+# Output Settings
+output:
+  directory: "./output"
+  format: "PNG"
+  quality: 95
+  save_metadata: true
+  create_thumbnails: true
+  thumbnail_size: [256, 256]
+
+# Web Interface Settings
+web:
+  host: "127.0.0.1"
+  port: 7860
+  share: false
+  auth: null
+
+# Logging Settings
+logging:
+  level: "INFO"
+  file: "./logs/ai_image_gen.log"
+  max_size: "10MB"
+  backup_count: 5
+  console: true
+
+# Performance Settings
+performance:
+  enable_attention_slicing: true
+  enable_cpu_offload: false
+  enable_xformers: true
+  torch_compile: false
